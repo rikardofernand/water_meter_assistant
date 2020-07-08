@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Customer" representedClassName="Customer" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="zipCode" optional="YES" attributeType="String"/>
+        <relationship name="rawMonthlyReadings" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="MonthlyReadings" inverseName="customer" inverseEntity="MonthlyReadings"/>
+    </entity>
+    <entity name="MonthlyReadings" representedClassName="MonthlyReadings" syncable="YES">
+        <attribute name="atDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reading" optional="YES" attributeType="String"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="rawMonthlyReadings" inverseEntity="Customer"/>
+    </entity>
+    <elements>
+        <element name="Customer" positionX="-55" positionY="105" width="128" height="118"/>
+        <element name="MonthlyReadings" positionX="231" positionY="306" width="128" height="88"/>
+    </elements>
+</model>
